@@ -1,3 +1,6 @@
 [submodule "threadx"]
 	path = threadx
 	url = https://github.com/azure-rtos/threadx.git
+[submodule "threadx-mcpp"]
+	path = threadx-mcpp
+	url = https://github.com/IntergatedCircuits/threadx-mcpp.git
