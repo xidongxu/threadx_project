@@ -18,11 +18,10 @@
 extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
+/* Includes */
+#include <stdio.h>
 
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
+/* Function */
 
 #ifdef __cplusplus
 }
