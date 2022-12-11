@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H750xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;..\..\..\..\..\threadx\common\inc;..\..\..\..\..\threadx\ports\cortex_m7\ac6\inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;..\..\..\..\..\threadx\common\inc;..\..\..\..\..\threadx\ports\cortex_m7\ac6\inc;..\App\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -381,12 +381,12 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Application/MDK-ARM</GroupName>
+          <GroupName>Application/User/App</GroupName>
           <Files>
             <File>
-              <FileName>startup_stm32h750xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>startup_stm32h750xx.s</FilePath>
+              <FileName>app_main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Src\app_main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -412,6 +412,16 @@
               <FileName>stm32h7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32h7xx_hal_timebase_tim.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/MDK-ARM</GroupName>
+          <Files>
+            <File>
+              <FileName>startup_stm32h750xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>startup_stm32h750xx.s</FilePath>
             </File>
           </Files>
         </Group>
