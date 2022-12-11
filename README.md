@@ -9,3 +9,15 @@ STM32H750XBH6
 
 threadx
 
+### push
+
+```c
+git push
+```
+
+### pull
+
+```c
+git pull
+```
+
