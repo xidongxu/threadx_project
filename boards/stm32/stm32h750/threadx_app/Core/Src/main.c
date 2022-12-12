@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "components.h"
 #include "tx_api.h"
 /* USER CODE END Includes */
 
@@ -93,6 +94,7 @@ int main(void)
   MX_GPIO_Init();
   MX_UART4_Init();
   /* USER CODE BEGIN 2 */
+  components_init();
   tx_kernel_enter();
   /* USER CODE END 2 */
 

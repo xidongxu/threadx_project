@@ -388,6 +388,11 @@
               <FileType>1</FileType>
               <FilePath>..\App\Src\app_main.c</FilePath>
             </File>
+            <File>
+              <FileName>app_log.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Src\app_log.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -552,6 +557,11 @@
               <FileName>cmd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\components\Src\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>components.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\components\Src\components.c</FilePath>
             </File>
           </Files>
         </Group>

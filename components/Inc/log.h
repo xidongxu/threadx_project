@@ -28,11 +28,18 @@ extern "C" {
 typedef enum _log_level
 {
     LOG_TRACE   = 0x00,
-    LOG_INFO    = 0x01,
-    LOG_WARING  = 0x02,
-    LOG_ERROR   = 0x03,
-    LOG_UNKNOW  = 0x04,
+    LOG_DEBUG   = 0x01,
+    LOG_INFO    = 0x02,
+    LOG_WARING  = 0x03,
+    LOG_ERROR   = 0x04,
+    LOG_UNKNOW  = 0x05,
 } log_level_t;
+
+#define log_trace(...)  log_output(LOG_TRACE,  __FILE__, __LINE__, __VA_ARGS__)
+#define log_debug(...)  log_output(LOG_DEBUG,  __FILE__, __LINE__, __VA_ARGS__)
+#define log_info(...)   log_output(LOG_INFO,   __FILE__, __LINE__, __VA_ARGS__)
+#define log_warn(...)   log_output(LOG_WARING, __FILE__, __LINE__, __VA_ARGS__)
+#define log_error(...)  log_output(LOG_ERROR,  __FILE__, __LINE__, __VA_ARGS__)
 
 typedef struct _log_lock
 {
@@ -41,7 +48,7 @@ typedef struct _log_lock
 } log_lock_t;
 
 typedef struct _log log_t;
-typedef void (*log_output_t)(log_level_t level, const char *fmt, ...);
+typedef void (*log_output_t)(log_level_t level, const char *file, int line, const char *fmt, ...);
 
 struct _log
 {
@@ -58,7 +65,7 @@ int log_set_level(log_level_t level);
 int log_set_output(log_output_t output);
 int log_set_locker(log_lock_t *locker);
 
-void log_output(log_level_t level, const char *fmt, ...);
+void log_output(log_level_t level, const char *file, int line, const char *fmt, ...);
 
 #ifdef __cplusplus
 }
