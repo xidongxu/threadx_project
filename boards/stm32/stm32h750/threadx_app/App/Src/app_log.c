@@ -16,19 +16,9 @@
 
 extern UART_HandleTypeDef huart4;
 
-static void kputstr(uint8_t *str, uint16_t len)
+unsigned long long kpow(unsigned long long m, unsigned long long n)
 {
-    if(huart4.gState != HAL_UART_STATE_READY)
-    {
-        HAL_UART_Abort(&huart4);
-        __HAL_UNLOCK(&huart4);
-    }
-    HAL_UART_Transmit(&huart4, str, len, LOG_OUTPUT_TIMEOUT);
-}
-
-unsigned long kmpown(unsigned long m, unsigned long n)
-{
-    unsigned long i = 0, ret = 1;
+    unsigned long long i = 0, ret = 1;
     if (n < 0) 
     {
         return 0;
@@ -40,11 +30,10 @@ unsigned long kmpown(unsigned long m, unsigned long n)
     return ret;
 }
 
-
-int kstrlen(char* str)
+int kstrlen(const char* str)
 {
-    char* start = str;
-    char* end = NULL;
+    const char* start = str;
+    const char* end = NULL;
     while (*str != '\0')
     {
         str++;
@@ -52,7 +41,6 @@ int kstrlen(char* str)
     }
     return (end - start);
 }
-
 
 static void kputchar(char ch)
 {
@@ -70,11 +58,16 @@ static int kprintf(const char *str, ...)
     int val_ret = 0;
     int val_int = 0;
     int val_cnt = 0;
+    int val_flg = 0;
     unsigned long val_seg = 0;
     unsigned long val_hex = 0;
     unsigned long val_tmp = 0;
     char *val_str = NULL;
     double val_flo = 0.0;
+    long long val_lld = 0;
+    long long val_lls = 0;
+    long val_lod = 0;
+    long val_los = 0;
     
     va_list args;
     va_start(args, str);
@@ -132,8 +125,8 @@ static int kprintf(const char *str, ...)
                         val_ret += val_cnt;
                         while(val_cnt)
                         {
-                            val_seg = val_int / kmpown(10, val_cnt - 1);
-                            val_int = val_int % kmpown(10, val_cnt - 1);
+                            val_seg = val_int / kpow(10, val_cnt - 1);
+                            val_int = val_int % kpow(10, val_cnt - 1);
                             kputchar((char)val_seg + '0');
                             val_cnt--;
                         }
@@ -165,13 +158,17 @@ static int kprintf(const char *str, ...)
                         val_ret += val_cnt;
                         while(val_cnt)
                         {
-                            val_seg = val_int / kmpown(8, val_cnt - 1);
-                            val_int = val_int % kmpown(8, val_cnt - 1);
+                            val_seg = val_int / kpow(8, val_cnt - 1);
+                            val_int = val_int % kpow(8, val_cnt - 1);
                             kputchar((char)val_seg + '0');
                             val_cnt--;
                         }
                         pstr++;
                         continue;
+                    }
+                    case 'X':
+                    {
+                        val_flg = 1;
                     }
                     case 'x':
                     {
@@ -192,15 +189,22 @@ static int kprintf(const char *str, ...)
                         val_ret += val_cnt;
                         while(val_cnt)
                         {
-                            val_seg = val_hex / kmpown(16, val_cnt - 1);
-                            val_hex = val_hex % kmpown(16, val_cnt - 1);
+                            val_seg = val_hex / kpow(16, val_cnt - 1);
+                            val_hex = val_hex % kpow(16, val_cnt - 1);
                             if(val_seg <= 9)
                             {
                                 kputchar((char)val_seg + '0');
                             }
                             else
                             {
-                                kputchar((char)val_seg - 10 + 'a');
+                                if(val_flg > 0)
+                                {
+                                    kputchar((char)val_seg - 10 + 'A');
+                                }
+                                else
+                                {
+                                    kputchar((char)val_seg - 10 + 'a');
+                                }
                             }
                             val_cnt--;
                         }
@@ -226,8 +230,8 @@ static int kprintf(const char *str, ...)
                         val_ret += val_cnt;
                         while(val_cnt)
                         {
-                            val_seg = val_int / kmpown(2, val_cnt - 1);
-                            val_int = val_int % kmpown(2, val_cnt - 1);
+                            val_seg = val_int / kpow(2, val_cnt - 1);
+                            val_int = val_int % kpow(2, val_cnt - 1);
                             kputchar((char)val_seg + '0');
                             val_cnt--;
                         }
@@ -256,7 +260,7 @@ static int kprintf(const char *str, ...)
                         {
                             while(val_seg)
                             {
-                                val_cnt--;
+                                val_cnt++;
                                 val_seg = val_seg / 10;
                             }
                         }
@@ -267,8 +271,8 @@ static int kprintf(const char *str, ...)
                         val_ret += val_cnt;
                         while(val_cnt)
                         {
-                            val_seg = val_tmp / kmpown(10, val_cnt - 1);
-                            val_tmp = val_tmp % kmpown(10, val_cnt - 1);
+                            val_seg = val_tmp / kpow(10, val_cnt - 1);
+                            val_tmp = val_tmp % kpow(10, val_cnt - 1);
                             kputchar((char)val_seg + '0');
                             val_cnt--;
                         }
@@ -279,14 +283,108 @@ static int kprintf(const char *str, ...)
                         val_tmp = (int)val_flo;
                         while(val_cnt)
                         {
-                            val_seg = val_tmp / kmpown(10, val_cnt - 1);
-                            val_tmp = val_tmp % kmpown(10, val_cnt - 1);
+                            val_seg = val_tmp / kpow(10, val_cnt - 1);
+                            val_tmp = val_tmp % kpow(10, val_cnt - 1);
                             kputchar((char)val_seg + '0');
                             val_cnt--;
                         }
                         val_ret += 6;
                         pstr++;
                         continue;
+                    }
+                    case 'l':
+                    {
+                        pstr++;
+                        if (*pstr == 'l')
+                        {
+                            pstr++;
+                            // %lld
+                            if (*pstr == 'd')
+                            {
+                                val_lld = va_arg(args, long long); 
+                                if(val_lld < 0) 
+                                { 
+                                    val_lld = -val_lld;
+                                    kputchar('-'); 
+                                    val_ret++; 
+                                }
+                                val_lls = val_lld;
+                                if(val_lld)
+                                {
+                                    while(val_lls)
+                                    {
+                                        val_cnt++;
+                                        val_lls = val_lls / 10;
+                                    }
+                                }
+                                else
+                                {
+                                    val_cnt = 1;
+                                }
+                                val_ret += val_cnt;
+                                while(val_cnt)
+                                {
+                                    val_lls = val_lld / kpow(10, val_cnt - 1);
+                                    val_lld = val_lld % kpow(10, val_cnt - 1);
+                                    kputchar((char)val_lls + '0');
+                                    val_cnt--;
+                                }
+                                pstr++;
+                            }
+                            // %ll?
+                            else
+                            {
+                                kputchar('%');
+                                kputchar('l');
+                                kputchar('l');
+                                val_ret += 3;
+                            }
+                        }
+                        // %ld
+                        else if (*pstr == 'd')
+                        {
+                            val_lod = va_arg(args, long); 
+                            if(val_lod < 0) 
+                            { 
+                                val_lod = -val_lod;
+                                kputchar('-'); 
+                                val_ret++; 
+                            }
+                            val_los = val_lod;
+                            if(val_lod)
+                            {
+                                while(val_los)
+                                {
+                                    val_cnt++;
+                                    val_los = val_los / 10;
+                                }
+                            }
+                            else
+                            {
+                                val_cnt = 1;
+                            }
+                            val_ret += val_cnt;
+                            while(val_cnt)
+                            {
+                                val_los = val_lod / kpow(10, val_cnt - 1);
+                                val_lod = val_lod % kpow(10, val_cnt - 1);
+                                kputchar((char)val_los + '0');
+                                val_cnt--;
+                            }
+                            pstr++;
+                        }
+                        // %l?
+                        else
+                        {
+                            kputchar('%');
+                            kputchar('l');
+                            val_ret += 2;
+                        }
+                        continue;
+                    }
+                    case 'p':
+                    {
+                        //%p
                     }
                     default:
                     {
@@ -312,7 +410,7 @@ static int kprintf(const char *str, ...)
 
 static void app_log_output(log_level_t level, const char *file, int line, const char *fmt, ...)
 {
-    kprintf("[%s][%d] - %s\r\n", file, line, "hello world");
+    kprintf("[%s][%d][%x][%ld] - %s\r\n", file, line, 127, (long)(123), "hello world");
 }
 
 int app_log_init(void)
