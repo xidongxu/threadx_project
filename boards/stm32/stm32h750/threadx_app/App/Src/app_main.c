@@ -33,12 +33,14 @@ void thread1_entry(ULONG thread_input)
 
 void thread2_entry(ULONG thread_input)
 {
+    uint32_t count = 0;
     app_log_init();
     /* Enter into a forever loop. */
 	while(1)
 	{
 		tx_thread_sleep(1000);
-        log_trace("hello world!\r\n");
+        log_trace("hello world - %d\r\n", count);
+        count++;
 	}
 }
 

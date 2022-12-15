@@ -23,6 +23,7 @@ extern "C" {
 #include <stdarg.h>
 #include <time.h>
 #include "tx_api.h"
+#include "kprintf.h"
 
 /* Typedef  */
 typedef enum _log_level
@@ -47,22 +48,17 @@ typedef struct _log_lock
     void (*unlock)(void);
 } log_lock_t;
 
-typedef struct _log log_t;
-typedef void (*log_output_t)(log_level_t level, const char *file, int line, const char *fmt, ...);
-
-struct _log
+typedef struct _log
 {
     log_level_t level;
     log_lock_t locker;
-    log_output_t output;
-    void *data;
-};
+} log_t;
 
 /* Function */
 int log_init(void);
 int log_deinit(void);
 int log_set_level(log_level_t level);
-int log_set_output(log_output_t output);
+int log_set_output(kputchar_t output);
 int log_set_locker(log_lock_t *locker);
 
 void log_output(log_level_t level, const char *file, int line, const char *fmt, ...);

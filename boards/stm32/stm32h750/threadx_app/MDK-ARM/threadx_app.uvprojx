@@ -563,6 +563,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\components\Src\components.c</FilePath>
             </File>
+            <File>
+              <FileName>kprintf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\components\Src\kprintf.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
