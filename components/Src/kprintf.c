@@ -10,45 +10,54 @@
   */
   
 #include "kprintf.h"
+#include "service.h"
 
 static kputchar_t kputchar = NULL;
+static kbuffer_t kbuffer = { NULL };
 
-int kprintf_output_register(kputchar_t func)
+int kprintf_putchar_register(kputchar_t func)
 {
     kputchar = func;
     return 0;
 }
 
-unsigned long long kpow(unsigned long long m, unsigned long long n)
+static void kbuff_init(char *buff, size_t size)
 {
-    unsigned long long i = 0, ret = 1;
-    if (n < 0) 
-    {
-        return 0;
-    }
-    for (i = 0; i < n; i++)
-    {
-        ret *= m;
-    }
-    return ret;
+    kbuffer.buff = buff;
+    kbuffer.size = size;
+    kbuffer.indx = 0;
 }
 
-int kstrlen(const char* str)
+static void kbuff_push(char ch)
 {
-    const char* start = str;
-    const char* end = NULL;
-    while (*str != '\0')
+    if(kbuffer.buff == NULL)
     {
-        str++;
-        end = str;
+        return;
     }
-    return (end - start);
+    if(kbuffer.indx == (kbuffer.size - 1))
+    {
+        kbuffer.buff[kbuffer.indx] = '\0';
+        return;
+    }
+    else
+    {
+        kbuffer.buff[kbuffer.indx] = ch;
+    }
+    kbuffer.indx++;
 }
 
-int kprintf(const char *str, ...)
+static void kbuff_deinit(void)
 {
-    char *pstr = (char *)str;
-    int val_ret = 0;
+    kbuffer.buff = NULL;
+    kbuffer.size = 0;
+    kbuffer.indx = 0;
+}
+
+size_t kvsnprintf(char *buffer, size_t size, const char *fmt, va_list args)
+{
+    char *pstr = (char *)fmt;
+    size_t val_ret = 0;
+    
     int val_int = 0;
     int val_cnt = 0;
     int val_flg = 0;
@@ -62,22 +71,16 @@ int kprintf(const char *str, ...)
     long val_lod = 0;
     long val_los = 0;
     
-    if(kputchar == NULL)
-    {
-        return 0;
-    }
-    
-    va_list args;
-    va_start(args, str);
+    kbuff_init(buffer, size);
     
     while(*pstr != '\0')
     {
         switch (*pstr)
         {
-            case ' ' : kputchar(*pstr); val_ret += 1; break;
-            case '\t': kputchar(*pstr); val_ret += 4; break;
-            case '\r': kputchar(*pstr); val_ret += 1; break;
-            case '\n': kputchar(*pstr); val_ret += 1; break;
+            case ' ' : kbuff_push(*pstr); val_ret += 1; break;
+            case '\t': kbuff_push(*pstr); val_ret += 4; break;
+            case '\r': kbuff_push(*pstr); val_ret += 1; break;
+            case '\n': kbuff_push(*pstr); val_ret += 1; break;
             case '%' : 
             {
                 pstr++;
@@ -85,7 +88,7 @@ int kprintf(const char *str, ...)
                 {
                     case '%': 
                     {
-                        kputchar('%'); 
+                        kbuff_push('%'); 
                         pstr++; 
                         val_ret++; 
                         continue;
@@ -93,7 +96,7 @@ int kprintf(const char *str, ...)
                     case 'c': 
                     {
                         val_int = va_arg(args, int); 
-                        kputchar((char)val_int); 
+                        kbuff_push((char)val_int); 
                         pstr++; 
                         val_ret++; 
                         continue;
@@ -104,7 +107,7 @@ int kprintf(const char *str, ...)
                         if(val_int < 0) 
                         { 
                             val_int = -val_int;
-                            kputchar('-'); 
+                            kbuff_push('-'); 
                             val_ret++; 
                         }
                         val_seg = val_int;
@@ -125,7 +128,7 @@ int kprintf(const char *str, ...)
                         {
                             val_seg = val_int / kpow(10, val_cnt - 1);
                             val_int = val_int % kpow(10, val_cnt - 1);
-                            kputchar((char)val_seg + '0');
+                            kbuff_push((char)val_seg + '0');
                             val_cnt--;
                         }
                         pstr++;
@@ -137,7 +140,7 @@ int kprintf(const char *str, ...)
                         if(val_int < 0)
                         {
                             val_int = -val_int;
-                            kputchar('-');
+                            kbuff_push('-');
                             val_ret++;
                         }
                         val_seg = val_int;
@@ -158,7 +161,7 @@ int kprintf(const char *str, ...)
                         {
                             val_seg = val_int / kpow(8, val_cnt - 1);
                             val_int = val_int % kpow(8, val_cnt - 1);
-                            kputchar((char)val_seg + '0');
+                            kbuff_push((char)val_seg + '0');
                             val_cnt--;
                         }
                         pstr++;
@@ -191,17 +194,17 @@ int kprintf(const char *str, ...)
                             val_hex = val_hex % kpow(16, val_cnt - 1);
                             if(val_seg <= 9)
                             {
-                                kputchar((char)val_seg + '0');
+                                kbuff_push((char)val_seg + '0');
                             }
                             else
                             {
                                 if(val_flg > 0)
                                 {
-                                    kputchar((char)val_seg - 10 + 'A');
+                                    kbuff_push((char)val_seg - 10 + 'A');
                                 }
                                 else
                                 {
-                                    kputchar((char)val_seg - 10 + 'a');
+                                    kbuff_push((char)val_seg - 10 + 'a');
                                 }
                             }
                             val_cnt--;
@@ -230,7 +233,7 @@ int kprintf(const char *str, ...)
                         {
                             val_seg = val_int / kpow(2, val_cnt - 1);
                             val_int = val_int % kpow(2, val_cnt - 1);
-                            kputchar((char)val_seg + '0');
+                            kbuff_push((char)val_seg + '0');
                             val_cnt--;
                         }
                         pstr++;
@@ -242,7 +245,7 @@ int kprintf(const char *str, ...)
                         val_ret = val_ret + kstrlen(val_str);
                         while(*val_str)
                         {
-                            kputchar(*val_str);
+                            kbuff_push(*val_str);
                             val_str++;
                         }
                         pstr++;
@@ -271,10 +274,10 @@ int kprintf(const char *str, ...)
                         {
                             val_seg = val_tmp / kpow(10, val_cnt - 1);
                             val_tmp = val_tmp % kpow(10, val_cnt - 1);
-                            kputchar((char)val_seg + '0');
+                            kbuff_push((char)val_seg + '0');
                             val_cnt--;
                         }
-                        kputchar('.');
+                        kbuff_push('.');
                         val_ret++;
                         val_flo = val_flo * 1000000;
                         val_cnt = 6;
@@ -283,7 +286,7 @@ int kprintf(const char *str, ...)
                         {
                             val_seg = val_tmp / kpow(10, val_cnt - 1);
                             val_tmp = val_tmp % kpow(10, val_cnt - 1);
-                            kputchar((char)val_seg + '0');
+                            kbuff_push((char)val_seg + '0');
                             val_cnt--;
                         }
                         val_ret += 6;
@@ -303,7 +306,7 @@ int kprintf(const char *str, ...)
                                 if(val_lld < 0) 
                                 { 
                                     val_lld = -val_lld;
-                                    kputchar('-'); 
+                                    kbuff_push('-'); 
                                     val_ret++; 
                                 }
                                 val_lls = val_lld;
@@ -324,7 +327,7 @@ int kprintf(const char *str, ...)
                                 {
                                     val_lls = val_lld / kpow(10, val_cnt - 1);
                                     val_lld = val_lld % kpow(10, val_cnt - 1);
-                                    kputchar((char)val_lls + '0');
+                                    kbuff_push((char)val_lls + '0');
                                     val_cnt--;
                                 }
                                 pstr++;
@@ -332,9 +335,9 @@ int kprintf(const char *str, ...)
                             // %ll?
                             else
                             {
-                                kputchar('%');
-                                kputchar('l');
-                                kputchar('l');
+                                kbuff_push('%');
+                                kbuff_push('l');
+                                kbuff_push('l');
                                 val_ret += 3;
                             }
                         }
@@ -345,7 +348,7 @@ int kprintf(const char *str, ...)
                             if(val_lod < 0) 
                             { 
                                 val_lod = -val_lod;
-                                kputchar('-'); 
+                                kbuff_push('-'); 
                                 val_ret++; 
                             }
                             val_los = val_lod;
@@ -366,7 +369,7 @@ int kprintf(const char *str, ...)
                             {
                                 val_los = val_lod / kpow(10, val_cnt - 1);
                                 val_lod = val_lod % kpow(10, val_cnt - 1);
-                                kputchar((char)val_los + '0');
+                                kbuff_push((char)val_los + '0');
                                 val_cnt--;
                             }
                             pstr++;
@@ -374,8 +377,8 @@ int kprintf(const char *str, ...)
                         // %l?
                         else
                         {
-                            kputchar('%');
-                            kputchar('l');
+                            kbuff_push('%');
+                            kbuff_push('l');
                             val_ret += 2;
                         }
                         continue;
@@ -386,7 +389,7 @@ int kprintf(const char *str, ...)
                     }
                     default:
                     {
-                        kputchar(' ');
+                        kbuff_push(' ');
                         val_ret++;
                         continue;
                     }
@@ -394,14 +397,50 @@ int kprintf(const char *str, ...)
             } 
             default:
             {
-                kputchar(*pstr);
+                kbuff_push(*pstr);
                 val_ret++;
                 break;
             }
         }
         pstr++;
     }
-    
-    va_end(args);
+
+    kbuff_deinit();
     return val_ret;
+}
+
+int ksnprintf(char *buff, size_t size, const char *fmt, ...)
+{
+    int length = 0;
+    va_list args;
+    
+    va_start(args, fmt);
+    length = kvsnprintf(buff, size, fmt, args);
+    va_end(args);
+    
+    return length;
+}
+
+int kprintf(const char *fmt, ...)
+{
+    static char buffer[512] = { NULL };
+    size_t size = sizeof(buffer);
+    size_t length;
+    size_t index;
+    va_list args;
+
+    va_start(args, fmt);
+    length = kvsnprintf(buffer, (size - 1), fmt, args);
+    va_end(args);
+    
+    if(kputchar != NULL)
+    {
+        for(index = 0; index < length; index++)
+        {
+            kputchar(buffer[index]);
+        }
+    }
+    
+    kmemset(buffer, 0, size);
+    return length;
 }

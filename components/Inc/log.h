@@ -58,7 +58,7 @@ typedef struct _log
 int log_init(void);
 int log_deinit(void);
 int log_set_level(log_level_t level);
-int log_set_output(kputchar_t output);
+int log_set_putchar(kputchar_t output);
 int log_set_locker(log_lock_t *locker);
 
 void log_output(log_level_t level, const char *file, int line, const char *fmt, ...);

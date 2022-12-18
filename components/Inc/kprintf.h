@@ -22,11 +22,20 @@ extern "C" {
 #include "stdarg.h"
 #include "stdlib.h"
 
+typedef struct kbuffer {
+    char *buff;
+    size_t size;
+    size_t indx;
+} kbuffer_t;
+
 typedef void (*kputchar_t)(char ch);
 
 /* Function */
-int kprintf(const char *str, ...);
-int kprintf_output_register(kputchar_t func);
+size_t kvsnprintf(char *buffer, size_t size, const char *fmt, va_list args);
+int ksnprintf(char *buff, size_t size, const char *fmt, ...);
+int kprintf(const char *fmt, ...);
+
+int kprintf_putchar_register(kputchar_t func);
 
 #ifdef __cplusplus
 }

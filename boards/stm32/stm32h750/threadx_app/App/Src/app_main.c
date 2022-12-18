@@ -33,7 +33,7 @@ void thread1_entry(ULONG thread_input)
 
 void thread2_entry(ULONG thread_input)
 {
-    uint32_t count = 0;
+    int count = 0;
     app_log_init();
     /* Enter into a forever loop. */
 	while(1)

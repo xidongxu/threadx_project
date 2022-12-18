@@ -17,7 +17,7 @@
 
 extern UART_HandleTypeDef huart4;
 
-static void kputchar(char ch)
+void kputchar(char ch)
 {
     if(huart4.gState != HAL_UART_STATE_READY)
     {
@@ -29,6 +29,6 @@ static void kputchar(char ch)
 
 int app_log_init(void)
 {
-    log_set_output(kputchar);
+    log_set_putchar(kputchar);
     return 0;
 }

@@ -10,6 +10,7 @@
   */
   
 #include "log.h"
+#include "service.h"
 
 static log_t private_log = { 0 };
 static TX_MUTEX private_locker = { 0 };
@@ -45,10 +46,10 @@ int log_set_level(log_level_t level)
     return result;
 }
 
-int log_set_output(kputchar_t output)
+int log_set_putchar(kputchar_t output)
 {
     int result = -1;
-    result = kprintf_output_register(output);
+    result = kprintf_putchar_register(output);
     return result;
 }
 
@@ -66,15 +67,21 @@ int log_setprivate_locker(log_lock_t *locker)
 
 void log_output(log_level_t level, const char *file, int line, const char *fmt, ...)
 {
-
+    va_list args;
+    char buffer[512] = { NULL };
+    size_t length = sizeof(buffer);
+    
     private_log.locker.lock();
     if(private_log.level >= level)
     {
-        va_list args;
+        ksnprintf(buffer, length, "[%s: %d] ", file, line);
+        kprintf("%s", buffer);
+        kmemset(buffer, 0, length);
         va_start(args, fmt);
-        kprintf("[%s-%d]", file, line);
-        kprintf(fmt, args);
+        kvsnprintf(buffer, length, fmt, args);
         va_end(args);
+        kprintf("%s", buffer);
+        kmemset(buffer, 0, length);
     }
     private_log.locker.unlock();
 }
