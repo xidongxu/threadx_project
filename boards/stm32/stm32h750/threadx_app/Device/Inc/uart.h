@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
-  * @file           : app_log.h
-  * @brief          : Header for app_log.c file.
+  * @file           : uart.h
+  * @brief          : Header for uart.c file.
   *                   This file contains the common defines of the application.
   ******************************************************************************
   * @attention
@@ -11,8 +11,8 @@
   ******************************************************************************
   */
 
-#ifndef __APP_LOG_H__
-#define __APP_LOG_H__
+#ifndef __UART_H__
+#define __UART_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -22,11 +22,11 @@ extern "C" {
 #include "stm32h7xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-int app_log_init(void);
+int uart_init(void);
 /* USER CODE END Includes */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __APP_LOG_H__ */
+#endif /* __UART_H__ */

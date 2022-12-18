@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
-  * @file           : components.c
-  * @brief          : components program body
+  * @file           : device.c
+  * @brief          : device program body
   ******************************************************************************
   * @attention
   *
@@ -9,11 +9,10 @@
   ******************************************************************************
   */
   
-#include "components.h"
-#include "uart.h"
+#include "device.h"
 
-int components_init(void)
+int device_init(void)
 {
-    log_init();
+    uart_init();
     return 0;
 }

@@ -10,7 +10,6 @@
   */
   
 #include "app_main.h"
-#include "app_log.h"
 #include "log.h"
 #include "tx_api.h"
 
@@ -34,7 +33,6 @@ void thread1_entry(ULONG thread_input)
 void thread2_entry(ULONG thread_input)
 {
     int count = 0;
-    app_log_init();
     /* Enter into a forever loop. */
 	while(1)
 	{
