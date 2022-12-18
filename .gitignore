@@ -1,1 +1,16 @@
 /boards/stm32/stm32h750/threadx_app/MDK-ARM/*.xdx
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/*.scvd
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/build/*.axf
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/build/*.bin
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/build/*.hex
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/build/*.map
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.iex
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.d
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.o
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.axf
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.htm
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.hex
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.lnp
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.map
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.sct
+/boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.dep
