@@ -355,7 +355,7 @@
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>TX_ENABLE_FPU_SUPPORT</Define>
+              <Define>TX_ENABLE_FPU_SUPPORT,</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>

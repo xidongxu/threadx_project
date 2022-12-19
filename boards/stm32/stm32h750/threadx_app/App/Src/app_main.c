@@ -13,22 +13,27 @@
 #include "log.h"
 #include "tx_api.h"
 
-static uint8_t thread1_stack[2048];
-static uint8_t thread2_stack[2048];
+static uint8_t thread1_stack[4096];
+static uint8_t thread2_stack[4096];
 static TX_THREAD thread1;
 static TX_THREAD thread2;
 
 void thread_stack_error_handler(TX_THREAD *thread_ptr)
 {
-    printf("\r\n------------------ thread stack error. ------------------\r\n");
-    int thread_prio = thread_ptr->tx_thread_priority;
+    printf("\r\n");
+    printf("------------------ thread stack error. ------------------\r\n");
     const char *thread_name = thread_ptr->tx_thread_name;
+    ULONG thread_prio= (ULONG)(thread_ptr->tx_thread_priority);
     ULONG stack_size = (ULONG)(thread_ptr->tx_thread_stack_size);
     ULONG stack_curr = (ULONG)(thread_ptr->tx_thread_stack_end - thread_ptr->tx_thread_stack_ptr);
     ULONG stack_used = (ULONG)(thread_ptr->tx_thread_stack_end - thread_ptr->tx_thread_stack_highest_ptr);
-    
+    printf("\r\n");
+    printf("stack_end = %p\r\n", thread_ptr->tx_thread_stack_end);
+    printf("stack_ptr = %p\r\n", thread_ptr->tx_thread_stack_ptr);
+    printf("stack_max = %p\r\n", thread_ptr->tx_thread_stack_highest_ptr);
+    printf("\r\n");
     printf("prio   stack_size   stack_use    stack_max    thread_name \r\n");
-    printf(" %02d      %05ld        %05ld        %05ld       %-8.8s   \r\n", \
+    printf(" %02ld      %05ld        %05ld        %05ld       %-8.8s  \r\n", \
          thread_prio, stack_size, stack_curr, stack_used, thread_name);
     printf("\r\n");
     while(1);
