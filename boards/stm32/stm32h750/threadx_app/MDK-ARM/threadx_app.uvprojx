@@ -1578,6 +1578,16 @@
               <FileType>2</FileType>
               <FilePath>..\Ports\tx_initialize_low_level.S</FilePath>
             </File>
+            <File>
+              <FileName>tx_port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Ports\tx_port.h</FilePath>
+            </File>
+            <File>
+              <FileName>tx_user.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Ports\tx_user.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
