@@ -48,8 +48,3 @@ void tx_application_define(void *first_unused_memory)
     tx_thread_create(&thread1, "Thread1", thread1_entry, 0x1234, thread1_stack, 1024, 3, 3, TX_NO_TIME_SLICE, TX_AUTO_START);
     tx_thread_create(&thread2, "Thread2", thread2_entry, 0x1234, thread2_stack, 1024, 3, 3, TX_NO_TIME_SLICE, TX_AUTO_START);
 }
-
-void _tx_thread_stack_error_handler(void)
-{
-
-}
