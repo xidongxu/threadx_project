@@ -70,11 +70,12 @@ void log_output(log_level_t level, const char *file, int line, const char *fmt, 
     va_list args;
     char buffer[512] = { NULL };
     size_t length = sizeof(buffer);
+    ULONG tick = tx_time_get();
     
     private_log.locker.lock();
     if(private_log.level >= level)
     {
-        ksnprintf(buffer, length, "[%s: %d] ", file, line);
+        ksnprintf(buffer, length, "[%ld][%s: %d] ", tick, file, line);
         kprintf("%s", buffer);
         kmemset(buffer, 0, length);
         va_start(args, fmt);
