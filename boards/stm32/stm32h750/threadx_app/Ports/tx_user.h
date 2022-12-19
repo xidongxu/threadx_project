@@ -18,9 +18,13 @@
 extern "C" {
 #endif
 
-/* USER CODE BEGIN Includes */
+/* USER CODE BEGIN DEFINE */
 
-/* USER CODE END Includes */
+#ifndef TX_ENABLE_STACK_CHECKING
+#define TX_ENABLE_STACK_CHECKING
+#endif
+
+/* USER CODE END DEFINE */
 
 #ifdef __cplusplus
 }
