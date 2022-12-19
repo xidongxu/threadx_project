@@ -651,7 +651,7 @@
 
   <Group>
     <GroupName>Components</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -3082,12 +3082,12 @@
     <File>
       <GroupNumber>10</GroupNumber>
       <FileNumber>230</FileNumber>
-      <FileType>1</FileType>
+      <FileType>2</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Ports\tx_init_low_level.c</PathWithFileName>
-      <FilenameWithoutPath>tx_init_low_level.c</FilenameWithoutPath>
+      <PathWithFileName>..\Ports\tx_initialize_low_level.S</PathWithFileName>
+      <FilenameWithoutPath>tx_initialize_low_level.S</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

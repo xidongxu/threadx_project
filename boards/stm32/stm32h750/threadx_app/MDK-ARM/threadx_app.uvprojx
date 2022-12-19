@@ -189,7 +189,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -1574,9 +1574,9 @@
           <GroupName>Ports</GroupName>
           <Files>
             <File>
-              <FileName>tx_init_low_level.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Ports\tx_init_low_level.c</FilePath>
+              <FileName>tx_initialize_low_level.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\Ports\tx_initialize_low_level.S</FilePath>
             </File>
           </Files>
         </Group>
