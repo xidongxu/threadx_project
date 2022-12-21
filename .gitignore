@@ -20,3 +20,5 @@
 /boards/win32/vs_2019/threadx_app/App/Debug/*.recipe
 /boards/win32/vs_2019/threadx_app/App/Debug/*.ilk
 /boards/win32/vs_2019/threadx_app/App/Debug/*.log
+/boards/win32/vs_2019/threadx_app/App/Debug/App.tlog/*.lastbuildstate
+/boards/win32/vs_2019/threadx_app/App/Debug/App.tlog/*.tlog
