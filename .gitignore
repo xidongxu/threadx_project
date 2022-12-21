@@ -14,3 +14,9 @@
 /boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.map
 /boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.sct
 /boards/stm32/stm32h750/threadx_app/MDK-ARM/threadx_app/*.dep
+/boards/win32/vs_2019/threadx_app/App/Debug/*.obj
+/boards/win32/vs_2019/threadx_app/App/Debug/*.idb
+/boards/win32/vs_2019/threadx_app/App/Debug/*.pdb
+/boards/win32/vs_2019/threadx_app/App/Debug/*.recipe
+/boards/win32/vs_2019/threadx_app/App/Debug/*.ilk
+/boards/win32/vs_2019/threadx_app/App/Debug/*.log
