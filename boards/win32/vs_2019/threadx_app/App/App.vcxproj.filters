@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\Kernel">
+      <UniqueIdentifier>{0e4aefd4-2b09-466e-8cff-ca0eb252ef32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Ports">
+      <UniqueIdentifier>{b973fdbe-60f2-4f45-934e-961f4ac7b64f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\App">
+      <UniqueIdentifier>{e6492383-f1c3-4654-860b-9fca9c3c96ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Kernel">
+      <UniqueIdentifier>{b0140f82-cc56-4a7e-9f98-b6d3a5ecb448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Ports">
+      <UniqueIdentifier>{fb87c274-3c5c-432a-94e5-2ab54679f9e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_allocate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_cleanup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_pool_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_release.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_allocate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_cleanup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_pool_search.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_byte_release.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_cleanup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_set.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_event_flags_set_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_initialize_high_level.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_initialize_kernel_enter.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_initialize_kernel_setup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_misra.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_cleanup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_priority_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_mutex_put.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_cleanup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_flush.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_front_send.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_receive.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_send.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_queue_send_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_ceiling_put.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_cleanup.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_put.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_semaphore_put_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_entry_exit_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_identify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_preemption_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_priority_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_relinquish.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_reset.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_resume.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_shell_entry.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_sleep.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_stack_analyze.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_stack_error_handler.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_stack_error_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_suspend.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_system_preempt_check.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_system_resume.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_system_suspend.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_terminate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_time_slice.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_time_slice_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_timeout.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_thread_wait_abort.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_time_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_time_set.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_activate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_deactivate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_expiration_process.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_performance_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_performance_system_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_system_activate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_system_deactivate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_timer_thread_entry.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_buffer_full_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_disable.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_enable.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_event_filter.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_event_unfilter.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_initialize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_interrupt_control.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_isr_enter_insert.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_isr_exit_insert.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_object_register.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_object_unregister.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_trace_user_event_insert.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_block_allocate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_block_pool_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_block_pool_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_block_pool_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_block_pool_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_block_release.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_byte_allocate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_byte_pool_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_byte_pool_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_byte_pool_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_byte_pool_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_byte_release.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_event_flags_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_event_flags_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_event_flags_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_event_flags_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_event_flags_set.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_event_flags_set_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_mutex_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_mutex_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_mutex_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_mutex_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_mutex_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_mutex_put.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_flush.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_front_send.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_receive.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_send.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_queue_send_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_ceiling_put.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_prioritize.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_put.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_semaphore_put_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_entry_exit_notify.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_preemption_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_priority_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_relinquish.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_reset.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_resume.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_suspend.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_terminate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_time_slice_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_thread_wait_abort.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_timer_activate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_timer_change.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_timer_create.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_timer_deactivate.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_timer_delete.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\common\src\txe_timer_info_get.c">
+      <Filter>源文件\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_initialize_low_level.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_context_restore.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_context_save.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_interrupt_control.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_schedule.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_stack_build.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_system_return.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_timer_interrupt.c">
+      <Filter>源文件\Ports</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\sample_threadx.c">
+      <Filter>源文件\App</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_api.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_block_pool.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_byte_pool.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_event_flags.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_initialize.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_mutex.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_queue.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_semaphore.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_thread.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_timer.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_trace.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_user_sample.h">
+      <Filter>头文件\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\threadx\ports\win32\vs_2019\inc\tx_port.h">
+      <Filter>头文件\Ports</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
