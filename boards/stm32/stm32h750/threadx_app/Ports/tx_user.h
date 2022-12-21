@@ -24,6 +24,14 @@ extern "C" {
 #define TX_ENABLE_STACK_CHECKING
 #endif
 
+#ifndef TX_ENABLE_FPU_SUPPORT
+#define TX_ENABLE_FPU_SUPPORT
+#endif
+
+#ifndef TX_INCLUDE_USER_DEFINE_FILE
+#define TX_INCLUDE_USER_DEFINE_FILE
+#endif
+
 /* USER CODE END DEFINE */
 
 #ifdef __cplusplus
