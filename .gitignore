@@ -24,6 +24,6 @@
 /boards/win32/vs_2019/threadx_app/App/Debug/App.tlog/*.tlog
 /boards/win32/vs_2019/threadx_app/Debug/*.exe
 /boards/win32/vs_2019/threadx_app/Debug/*.pdb
-/boards/win32/vs_2019/threadx_app/.vs/threadx_app/v16/ipch/AutoPCH/ff5bc89706b1f872/*.ipch
+/boards/win32/vs_2019/threadx_app/.vs/threadx_app/v16/ipch/AutoPCH/*/*.ipch
 /boards/win32/vs_2019/threadx_app/.vs/threadx_app/v16/*.suo
 /boards/win32/vs_2019/threadx_app/.vs/threadx_app/v16/*.db
