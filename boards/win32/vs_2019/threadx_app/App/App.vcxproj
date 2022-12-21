@@ -212,7 +212,8 @@
     <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_stack_build.c" />
     <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_thread_system_return.c" />
     <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_timer_interrupt.c" />
-    <ClCompile Include="Src\sample_threadx.c" />
+    <ClCompile Include="Src\app_main.c" />
+    <ClCompile Include="Src\main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_api.h" />
@@ -228,6 +229,7 @@
     <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_trace.h" />
     <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_user_sample.h" />
     <ClInclude Include="..\..\..\..\..\threadx\ports\win32\vs_2019\inc\tx_port.h" />
+    <ClInclude Include="Inc\app_main.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -299,7 +301,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\..\..\threadx\common\inc;..\..\..\..\..\threadx\ports\win32\vs_2019\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\..\threadx\common\inc;..\..\..\..\..\threadx\ports\win32\vs_2019\inc;.\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

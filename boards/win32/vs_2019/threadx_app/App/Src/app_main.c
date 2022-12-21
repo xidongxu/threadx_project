@@ -10,8 +10,9 @@
   */
   
 #include "app_main.h"
-#include "log.h"
 #include "tx_api.h"
+#include <stdint.h>
+#include <stdio.h>
 
 static uint8_t thread1_stack[4096];
 static uint8_t thread2_stack[4096];
@@ -25,8 +26,8 @@ void thread_stack_error_handler(TX_THREAD *thread_ptr)
     const char *thread_name = thread_ptr->tx_thread_name;
     ULONG thread_prio= (ULONG)(thread_ptr->tx_thread_priority);
     ULONG stack_size = (ULONG)(thread_ptr->tx_thread_stack_size);
-    ULONG stack_curr = (ULONG)(thread_ptr->tx_thread_stack_end - thread_ptr->tx_thread_stack_ptr);
-    ULONG stack_used = (ULONG)(thread_ptr->tx_thread_stack_end - thread_ptr->tx_thread_stack_highest_ptr);
+    ULONG stack_curr = (ULONG)((ULONG)thread_ptr->tx_thread_stack_end - (ULONG)thread_ptr->tx_thread_stack_ptr);
+    ULONG stack_used = (ULONG)((ULONG)thread_ptr->tx_thread_stack_end - (ULONG)thread_ptr->tx_thread_stack_highest_ptr);
     printf("\r\n");
     printf("stack_end = %p\r\n", thread_ptr->tx_thread_stack_end);
     printf("stack_ptr = %p\r\n", thread_ptr->tx_thread_stack_ptr);
@@ -45,11 +46,8 @@ void thread1_entry(ULONG thread_input)
 	/* Enter into a forever loop. */
 	while(1)
 	{
-        HAL_GPIO_WritePin(GPIOI, GPIO_PIN_8, GPIO_PIN_SET);
-		tx_thread_sleep(700);
-        HAL_GPIO_WritePin(GPIOI, GPIO_PIN_8, GPIO_PIN_RESET);
-        tx_thread_sleep(300);
-        printf("hello world - %d\r\n", count);
+        tx_thread_sleep(10);
+        printf("thread1: hello world - %d\r\n", count);
         count++;
 	}
 }
@@ -60,8 +58,8 @@ void thread2_entry(ULONG thread_input)
     /* Enter into a forever loop. */
 	while(1)
 	{
-		tx_thread_sleep(100);
-        log_trace("hello world - %d\r\n", count);
+		tx_thread_sleep(10);
+        printf("thread2: hello world - %d\r\n", count);
         count++;
 	}
 }

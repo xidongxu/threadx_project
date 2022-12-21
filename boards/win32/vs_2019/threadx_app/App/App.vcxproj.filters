@@ -28,6 +28,9 @@
     <Filter Include="头文件\Ports">
       <UniqueIdentifier>{fb87c274-3c5c-432a-94e5-2ab54679f9e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\App">
+      <UniqueIdentifier>{5bee4bba-9ee0-4e78-babf-641c3e44a4f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\threadx\common\src\tx_block_allocate.c">
@@ -609,7 +612,10 @@
     <ClCompile Include="..\..\..\..\..\threadx\ports\win32\vs_2019\src\tx_timer_interrupt.c">
       <Filter>源文件\Ports</Filter>
     </ClCompile>
-    <ClCompile Include="Src\sample_threadx.c">
+    <ClCompile Include="Src\app_main.c">
+      <Filter>源文件\App</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\main.c">
       <Filter>源文件\App</Filter>
     </ClCompile>
   </ItemGroup>
@@ -652,6 +658,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\threadx\ports\win32\vs_2019\inc\tx_port.h">
       <Filter>头文件\Ports</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\app_main.h">
+      <Filter>头文件\App</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
