@@ -665,5 +665,8 @@
     <ClInclude Include="Inc\app_main.h">
       <Filter>头文件\App</Filter>
     </ClInclude>
+    <ClInclude Include="..\Ports\tx_user.h">
+      <Filter>头文件\Ports</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

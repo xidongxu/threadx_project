@@ -14,10 +14,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
-static uint8_t thread1_stack[4096];
-static uint8_t thread2_stack[4096];
-static TX_THREAD thread1;
-static TX_THREAD thread2;
+static uint8_t thread1_stack[4096] = { 0x00 };
+static uint8_t thread2_stack[4096] = { 0x00 };
+static TX_THREAD thread1 = { 0x00 };
+static TX_THREAD thread2 = { 0x00 };
 
 void thread_stack_error_handler(TX_THREAD *thread_ptr)
 {

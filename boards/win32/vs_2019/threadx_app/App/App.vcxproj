@@ -229,6 +229,7 @@
     <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_trace.h" />
     <ClInclude Include="..\..\..\..\..\threadx\common\inc\tx_user_sample.h" />
     <ClInclude Include="..\..\..\..\..\threadx\ports\win32\vs_2019\inc\tx_port.h" />
+    <ClInclude Include="..\Ports\tx_user.h" />
     <ClInclude Include="Inc\app_main.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -299,9 +300,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;TX_INCLUDE_USER_DEFINE_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\..\..\threadx\common\inc;..\..\..\..\..\threadx\ports\win32\vs_2019\inc;.\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\..\threadx\common\inc;..\..\..\..\..\threadx\ports\win32\vs_2019\inc;.\Inc;.\..\Ports;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
